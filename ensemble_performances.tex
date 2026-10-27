@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{amsmath}
+\begin{document}
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{6pt}
+\caption{Best evaluation episode return of the policies in each ensemble.
+Each cell is the mean $\pm$ the sample standard deviation over the 16 policies.
+Search and evaluation are the odd and even ranks of that return.}
+\label{tab:ensemble-performances}
+\begin{tabular}{ll cc}
+\toprule
+Environment & Ensemble & Search & Evaluation \\
+\midrule
+\multirow{3}{*}{Hopper}
+ & PPO & $2988 \pm 351$ & $2920 \pm 410$ \\
+ & SAC & $3584 \pm 73$ & $3571 \pm 50$ \\
+ & PPO+SAC & $3428 \pm 232$ & $3402 \pm 230$ \\
+\addlinespace
+\multirow{3}{*}{Walker2d}
+ & PPO & $5345 \pm 478$ & $5286 \pm 425$ \\
+ & SAC & $5428 \pm 370$ & $5366 \pm 327$ \\
+ & PPO+SAC & $5715 \pm 315$ & $5633 \pm 239$ \\
+\addlinespace
+\multirow{3}{*}{Humanoid}
+ & PPO & $13615 \pm 622$ & $13520 \pm 479$ \\
+ & SAC & $9679 \pm 633$ & $9616 \pm 595$ \\
+ & PPO+SAC & $12129 \pm 2056$ & $12010 \pm 2001$ \\
+\addlinespace
+\multirow{3}{*}{Ant}
+ & PPO & $3883 \pm 167$ & $3864 \pm 147$ \\
+ & SAC & $4641 \pm 200$ & $4616 \pm 175$ \\
+ & PPO+SAC & $4401 \pm 430$ & $4366 \pm 416$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}

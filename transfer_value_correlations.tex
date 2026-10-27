@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{amsmath}
+\begin{document}
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\caption{Spearman correlation between the collecting ensemble's fail rate $r_S$
+and each fail rate drawn in the transfer figure.
+The row names the ensemble that collected the cases.
+The sample is the 160{,}000 solvable test cases; the all-fail quota is the
+rightmost point of the figure and is excluded, as in the other rank correlations.
+A parenthetical digit is the standard deviation of the experiment-clustered
+bootstrap, over every resample of the five searches, in the last decimal place:
+$0.827(5)$ means $0.827 \pm 0.005$.
+A dash marks the collecting search, which lies on the diagonal, or a search
+that shares policies with it.}
+\label{tab:transfer-value-correlations}
+\begin{tabular}{ll ccc cc}
+\toprule
+& & \multicolumn{3}{c}{Evaluation} & \multicolumn{2}{c}{Search} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-7}
+Environment & $r_S$ from & PPO & SAC & PPO+SAC & PPO & SAC \\
+\midrule
+\multirow{3}{*}{Hopper}
+ & PPO & $0.827(5)$ & $0.718(8)$ & $0.79(1)$ & --- & $0.833(5)$ \\
+ & SAC & $0.828(5)$ & $0.802(5)$ & $0.845(7)$ & $0.808(9)$ & --- \\
+ & PPO+SAC & $0.842(4)$ & $0.805(6)$ & $0.844(7)$ & --- & --- \\
+\addlinespace
+\multirow{3}{*}{Walker2d}
+ & PPO & $0.914(1)$ & $0.851(2)$ & $0.8942(7)$ & --- & $0.856(2)$ \\
+ & SAC & $0.841(1)$ & $0.897(1)$ & $0.8851(9)$ & $0.858(2)$ & --- \\
+ & PPO+SAC & $0.889(3)$ & $0.893(1)$ & $0.902(1)$ & --- & --- \\
+\addlinespace
+\multirow{3}{*}{Humanoid}
+ & PPO & $0.895(1)$ & $0.882(2)$ & $0.9046(4)$ & --- & $0.878(2)$ \\
+ & SAC & $0.843(2)$ & $0.8842(3)$ & $0.8790(3)$ & $0.8691(8)$ & --- \\
+ & PPO+SAC & $0.876(1)$ & $0.8786(7)$ & $0.888(2)$ & --- & --- \\
+\addlinespace
+\multirow{3}{*}{Ant}
+ & PPO & $0.9032(5)$ & $0.697(1)$ & $0.8383(8)$ & --- & $0.687(2)$ \\
+ & SAC & $0.775(4)$ & $0.9076(9)$ & $0.871(2)$ & $0.773(7)$ & --- \\
+ & PPO+SAC & $0.879(2)$ & $0.8497(9)$ & $0.9161(9)$ & --- & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}
