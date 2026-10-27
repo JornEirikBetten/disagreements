@@ -3,3 +3,13 @@ __pycache__/
 .venv/
 .env
 .env.*
+
+# The study archive. Git tracks these four names as symlinks.
+# If a symlink is replaced by the real directory, do not commit its files.
+/datasets/
+/trained_policies/
+/test_suites/
+/figures/
+*.pkl
+*.npy
+*.npz
